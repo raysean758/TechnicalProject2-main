@@ -1,7 +1,12 @@
+"use client"
 import { Building } from 'lucide-react';
 import Link from 'next/link';
-import React from 'react';
+import React, { use } from 'react';
+
+import { usePathname } from 'next/navigation';
 export default function HomeNavbar() {
+    const pathname =usePathname()
+    console.log(pathname)
     const navLinks = [
         
         {
@@ -31,7 +36,13 @@ export default function HomeNavbar() {
            {navLinks.map((item,i) => {
             return (
 
-                <Link key={i} href={item.href} className="py-1 border-b-2 border-blue-600">{item.title}</Link>
+                <Link 
+                key={i}
+                href={item.href}
+                className={'${pathname===item.href ? "py-1 border-b-2 border-blue-600" : "py-1"}'}
+                >
+                    {item.title}
+                    </Link>
 
             );
            })}
