@@ -1,5 +1,7 @@
-import { CheckCircle2 } from 'lucide-react'
-import React from 'react'
+import Sales from '@/app/(back-office)/dashboard/sales/page';
+import { CheckCircle2 } from 'lucide-react';
+import React from 'react';
+import SalesActivityCard from './SalesActivityCard';
 
 export default function SalesOverview() {
     const salesActivity = [
@@ -24,37 +26,43 @@ export default function SalesOverview() {
             href: "#",
             color: "text-green-500",
         }
-    ]
+    ];
+
+    const inventorySummary = [
+        {
+            title: "Quantity in stock",
+            number: 10,
+        },
+        {
+            title: "Quantity received",
+            number: 0,
+        },
+    ];
 
     return (
-        <div className='bg-blue-100 border-b border-slate-300 p-8 grid grid-cols-12 gap-4'>
+        <div className='bg-blue-50 border-b border-slate-300 grid grid-cols-12 gap-4'>
             {/* Sales activity */}
-            <div className="col-span-8">
+            <div className="col-span-8 border-r border-slate-300 p-8">
                 <h2 className='mb-6 text-2xl'>Sales Activity</h2>
-                <div className="grid grid-cols-3 gap-4">
+                <div className="pr-8 grid grid-cols-4 gap-4">
                     {salesActivity.map((item, i) => (
-                        <div key={i} className="shadow rounded-lg border border-slate-200 hover:border-blue-400 bg-white px-3 py-4 cursor-pointer flex items-center flex-col gap-3 transition-all duration-300">
-                            <h4 className='font-semibold text-3xl'>{item.number}</h4>
-                            <small className='text-slate-500'>{item.unit}</small>
-                            <div className="flex items-center space-x-2 text-slate-500">
-                                <CheckCircle2 className='w-4 h-4' />
-                                <span className='uppercase'>{item.title}</span>
-                            </div>
-                        </div>
+                        <SalesActivityCard item={item} key={i} />
                     ))}
                 </div>
             </div>
 
             {/* Inventory Summary */}
-            <div className="col-span-4">
+            <div className="col-span-4 p-8">
                 <h2 className='mb-6 text-2xl'>Inventory Summary</h2>
-                <div className="">
-                    <div className="shadow rounded-lg border border-slate-200 hover:border-blue-400 bg-white py-2 px-4 cursor-pointer flex items-center gap-3 justify-between transition-all duration-300">
-                        <h2 className='text-slate-500 uppercase text-sm'>Quantity in hand</h2>
-                        <h4 className='font-semibold text-2xl'>10</h4>
-                    </div>
+                <div className="space-y-4">
+                    {inventorySummary.map((item, i) => (
+                        <div key={i} className="bg-white p-4 rounded shadow text-sm">
+                            <p className="text-gray-500">{item.title}</p>
+                            <p className="text-xl font-bold">{item.number}</p>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>
-    )
+    );
 }
