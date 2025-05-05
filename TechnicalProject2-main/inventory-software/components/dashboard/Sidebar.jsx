@@ -11,12 +11,9 @@ import {
   } from 'lucide-react';
   import Link from 'next/link';
   import React from 'react';
-  import {
-    Collapsible,
-    CollapsibleContent,
-    CollapsibleTrigger,
-  } from "@/components/ui/collapsible";
+ 
 import CollapsibleLink from './CollapsibleLink';
+import SidebarDropdownLink from './SidebarDropdownLink';
   
   export default function Sidebar() {
     const inventoryLinks = [
@@ -41,18 +38,7 @@ import CollapsibleLink from './CollapsibleLink';
               <House className="w-4 h-4" />
               <span>Home</span>
             </Link>
-  
-            <Collapsible>
-              <CollapsibleTrigger className="p-2 flex items-center space-x-2">
-                <ChartCandlestick className="w-4 h-4" />
-                <span>Inventory</span>
-              </CollapsibleTrigger>
-              <CollapsibleContent>
-              <CollapsibleLink href="#" title="Items"/>
-              <CollapsibleLink href="#" title="Item Groups"/>
-              <CollapsibleLink href="#" title="Inventory Adjustments"/>
-              </CollapsibleContent>
-            </Collapsible>
+  <SidebarDropdownLink title="Inventory" items={inventoryLinks} />
   
             <button className="p-2 flex items-center space-x-2">
               <ShoppingCart className="w-4 h-4" />
