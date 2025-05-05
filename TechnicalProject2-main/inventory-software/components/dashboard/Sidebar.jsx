@@ -1,6 +1,13 @@
-import { Blocks, ChartCandlestick, ChartNoAxesCombined, CircleChevronRight, FileText, House, Library, ShoppingCart } from 'lucide-react';
+import { Blocks, ChartCandlestick, ChartNoAxesCombined, CircleChevronRight, CirclePlus, FileText, House, Library, ShoppingCart } from 'lucide-react';
 import Link from 'next/link';
 import React from 'react';
+import {
+    Collapsible,
+    CollapsibleContent,
+    CollapsibleTrigger,
+  } from "@/components/ui/collapsible"
+  
+
 export default function Sidebar() {
     return (
        <div className="w-60 min-h-screen bg-slate-800 text-slate-50 fixed">
@@ -18,6 +25,18 @@ export default function Sidebar() {
                 <House className='w-4 h-4'></House>
                 <span>Home</span>
                 </Link>
+                <Collapsible>
+  <CollapsibleTrigger className="p-2 flex items-center space-x-2"><ChartCandlestick className='w-4 h-4'></ChartCandlestick>
+  <span>Inventory</span></CollapsibleTrigger>
+  <CollapsibleContent>
+  <Link className='flex items-center justify-between pl-8 pr-4 hover:bg-slate-800 transition-all duration-300 py-2.5 rounded-md' href="#"><span className='text-sm'>Items</span><CirclePlus className='w-4 h-4'></CirclePlus> 
+  </Link>
+  <Link className='flex items-center justify-between pl-8 pr-4 hover:bg-slate-800 transition-all duration-300 py-2.5 rounded-md' href="#"><span className='text-sm'>Item Groups</span></Link> 
+  <Link className='flex items-center justify-between pl-8 pr-4 hover:bg-slate-800 transition-all duration-300 py-2.5 rounded-md space-x-3' href="#"><span className='text-sm'>Inventory Adjustments</span></Link> 
+ <CirclePlus className='w-4 h-4'></CirclePlus> 
+  </CollapsibleContent>
+</Collapsible>
+
                 <button className=" p-2 flex items-center space-x-2">
                 <ChartCandlestick className='w-4 h-4'></ChartCandlestick>
                 <span>Inventory</span>
@@ -38,6 +57,7 @@ export default function Sidebar() {
                 <FileText className='w-4 h-4'></FileText>
                 <span>Documents</span>
                 </Link>
+                
             </nav>
         </div>
        
