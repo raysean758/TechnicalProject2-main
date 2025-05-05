@@ -1,73 +1,87 @@
-import { Blocks, ChartCandlestick, ChartNoAxesCombined, CircleChevronRight, CirclePlus, FileText, House, Library, ShoppingCart } from 'lucide-react';
-import Link from 'next/link';
-import React from 'react';
-import {
+import { 
+    Blocks, 
+    ChartCandlestick, 
+    ChartNoAxesCombined, 
+    CircleChevronRight, 
+    CirclePlus, 
+    FileText, 
+    House, 
+    Library, 
+    ShoppingCart 
+  } from 'lucide-react';
+  import Link from 'next/link';
+  import React from 'react';
+  import {
     Collapsible,
     CollapsibleContent,
     CollapsibleTrigger,
-  } from "@/components/ui/collapsible"
+  } from "@/components/ui/collapsible";
+import CollapsibleLink from './CollapsibleLink';
   
-
-export default function Sidebar() {
+  export default function Sidebar() {
+    const inventoryLinks = [
+      { title: "Items", href: "#" },
+      { title: "Item Groups", href: "#" },
+      { title: "Inventory Adjustments", href: "#" },
+    ];
+  
     return (
-       <div className="w-60 min-h-screen bg-slate-800 text-slate-50 fixed">
-        {/*Top */}
+      <div className="w-60 min-h-screen bg-slate-800 text-slate-50 fixed">
+        {/* Top */}
         <div className="flex flex-col">
-            {/* Logo */}
-            <Link href="" className="bg-slate-950 flex space-x-2 items-center py-3 px-2">
-                <Library></Library> 
-                <span className='text-x1 font-semibold '>Inventory</span>
+          {/* Logo */}
+          <Link href="#" className="bg-slate-950 flex space-x-2 items-center py-3 px-2">
+            <Library />
+            <span className="text-xl font-semibold">Inventory</span>
+          </Link>
+  
+          {/* Links */}
+          <nav className="flex flex-col gap-3 px-3 py-6">
+            <Link href="#" className="flex items-center space-x-2 bg-blue-600 text-slate-50 p-2 rounded-md">
+              <House className="w-4 h-4" />
+              <span>Home</span>
             </Link>
-            {/*Links */}
-
-            <nav className='flex flex-col gap-3 px-3 py-6'>
-                <Link href=""className="flex items-center space-x-2 bg-blue-600 text-slate-50 p-2 rounded-md">
-                <House className='w-4 h-4'></House>
-                <span>Home</span>
-                </Link>
-                <Collapsible>
-  <CollapsibleTrigger className="p-2 flex items-center space-x-2"><ChartCandlestick className='w-4 h-4'></ChartCandlestick>
-  <span>Inventory</span></CollapsibleTrigger>
-  <CollapsibleContent>
-  <Link className='flex items-center justify-between pl-8 pr-4 hover:bg-slate-800 transition-all duration-300 py-2.5 rounded-md' href="#"><span className='text-sm'>Items</span><CirclePlus className='w-4 h-4'></CirclePlus> 
-  </Link>
-  <Link className='flex items-center justify-between pl-8 pr-4 hover:bg-slate-800 transition-all duration-300 py-2.5 rounded-md' href="#"><span className='text-sm'>Item Groups</span></Link> 
-  <Link className='flex items-center justify-between pl-8 pr-4 hover:bg-slate-800 transition-all duration-300 py-2.5 rounded-md space-x-3' href="#"><span className='text-sm'>Inventory Adjustments</span></Link> 
- <CirclePlus className='w-4 h-4'></CirclePlus> 
-  </CollapsibleContent>
-</Collapsible>
-
-                <button className=" p-2 flex items-center space-x-2">
-                <ChartCandlestick className='w-4 h-4'></ChartCandlestick>
+  
+            <Collapsible>
+              <CollapsibleTrigger className="p-2 flex items-center space-x-2">
+                <ChartCandlestick className="w-4 h-4" />
                 <span>Inventory</span>
-                </button>
-                <button className=" p-2 flex items-center space-x-2">
-                <ShoppingCart className='w-4 h-4'></ShoppingCart>
-                <span>Purchases</span>
-                </button>
-                <Link href=""className="p-2 flex items-center space-x-2">
-                <Blocks className='w-4 h-4'></Blocks>
-                <span>Integrations</span>
-                </Link>
-                <Link href="" className="p-2 flex items-center space-x-2">
-                <ChartNoAxesCombined className='w-4 h-4'></ChartNoAxesCombined>
-                <span>Reports</span>
-                </Link>
-                <Link href="" className="p-2 flex items-center space-x-2">
-                <FileText className='w-4 h-4'></FileText>
-                <span>Documents</span>
-                </Link>
-                
-            </nav>
-        </div>
-       
-        {/*Bottom */}
-        <div className="flex flex-col">
-        <button className="bg-slate-950 flex space-x-2 items-center justify-center py-3 px-2">
-                <CircleChevronRight></CircleChevronRight>
+              </CollapsibleTrigger>
+              <CollapsibleContent>
+              <CollapsibleLink href="#" title="Items"/>
+              <CollapsibleLink href="#" title="Item Groups"/>
+              <CollapsibleLink href="#" title="Inventory Adjustments"/>
+              </CollapsibleContent>
+            </Collapsible>
+  
+            <button className="p-2 flex items-center space-x-2">
+              <ShoppingCart className="w-4 h-4" />
+              <span>Purchases</span>
             </button>
+  
+            <Link href="#" className="p-2 flex items-center space-x-2">
+              <Blocks className="w-4 h-4" />
+              <span>Integrations</span>
+            </Link>
+  
+            <Link href="#" className="p-2 flex items-center space-x-2">
+              <ChartNoAxesCombined className="w-4 h-4" />
+              <span>Reports</span>
+            </Link>
+  
+            <Link href="#" className="p-2 flex items-center space-x-2">
+              <FileText className="w-4 h-4" />
+              <span>Documents</span>
+            </Link>
+          </nav>
         </div>
-        {/*Footer Icon */}
-       </div>
+  
+        {/* Bottom */}
+        <div className="flex flex-col">
+          <button className="bg-slate-950 flex space-x-2 items-center justify-center py-3 px-2">
+            <CircleChevronRight />
+          </button>
+        </div>
+      </div>
     );
-}
+  }
