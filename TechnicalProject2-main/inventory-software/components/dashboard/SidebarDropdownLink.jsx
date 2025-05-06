@@ -15,9 +15,9 @@ export default function SidebarDropdownLink({title, items, icon}) {
                 <span>{title}</span>
               </CollapsibleTrigger>
               <CollapsibleContent>
-              <CollapsibleLink href="#" title="Items"/>
-              <CollapsibleLink href="#" title="Item Groups"/>
-              <CollapsibleLink href="#" title="Inventory Adjustments"/>
+              {items.map((item) => (
+          <CollapsibleLink key={item.title} href={item.href} title={item.title} />
+        ))}
               </CollapsibleContent>
             </Collapsible>
 

@@ -21,6 +21,12 @@ import SidebarDropdownLink from './SidebarDropdownLink';
       { title: "Item Groups", href: "#" },
       { title: "Inventory Adjustments", href: "#" },
     ];
+    const salesLinks = [
+      { title: "Sales Orders", href: "#" },
+      { title: "Invoices", href: "#" },
+      { title: "Sales Receipts", href: "#" },
+      { title: "Credit Notes", href: "#" },
+    ];
   
     return (
       <div className="w-60 min-h-screen bg-slate-800 text-slate-50 fixed">
@@ -38,7 +44,8 @@ import SidebarDropdownLink from './SidebarDropdownLink';
               <House className="w-4 h-4" />
               <span>Home</span>
             </Link>
-  <SidebarDropdownLink title="Inventory" items={inventoryLinks} />
+  <SidebarDropdownLink title="Inventory" items={inventoryLinks}/>
+  <SidebarDropdownLink title="Sales" items={salesLinks} />
   
             <button className="p-2 flex items-center space-x-2">
               <ShoppingCart className="w-4 h-4" />
