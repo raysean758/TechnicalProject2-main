@@ -17,8 +17,10 @@ import SidebarDropdownLink from './SidebarDropdownLink';
   
   export default function Sidebar() {
     const inventoryLinks = [
-      { title: "Items", href: "/dashboard/inventory" },
-      { title: "Item Groups", href: "/dashboard/inventory" },
+      { title: "Items", href: "/dashboard/inventory/items/new" },
+      { title: "Categories", href: "/dashboard/inventory/categories/new" },
+      { title: "Brands", href: "/dashboard/inventory/brands/new" },
+      { title: "Units", href: "/dashboard/inventory/units/new" },
       { title: "Inventory Adjustments", href: "/dashboard/inventory" },
     ];
     const salesLinks = [
@@ -46,7 +48,7 @@ import SidebarDropdownLink from './SidebarDropdownLink';
             </Link>
   <SidebarDropdownLink title="Inventory" items={inventoryLinks}/>
   <SidebarDropdownLink title="Sales" items={salesLinks} />
-  
+
             <button className="p-2 flex items-center space-x-2">
               <ShoppingCart className="w-4 h-4" />
               <span>Purchases</span>

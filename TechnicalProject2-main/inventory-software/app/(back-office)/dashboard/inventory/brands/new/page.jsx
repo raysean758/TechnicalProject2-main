@@ -1,9 +1,9 @@
 import React from 'react' ;
 
-export default function ItemGroups() {
+export default function NewBrand() {
     return (
         <div>
-            <h2>ItemGroups</h2>
+            <h2>New Brand</h2>
         </div>
     );
 }
