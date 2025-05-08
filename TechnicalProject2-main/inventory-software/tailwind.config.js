@@ -4,6 +4,7 @@ module.exports = {
     extends: {}
     },
     plugins: [
+      require('@tailwindcss-animate'),
       require('@tailwindcss/forms'),
       // ...
     ],
