@@ -11,19 +11,28 @@ export default function Inventory() {
         {
             title: "Items",
             description: "Items",
-            link: "/new",
+            link: "/dashboard/inventory/items/new",
             linkTitle: "New Item",
             enabled: true,
             icon: Shirt,
         },
         {
-            title: "Price Lists",
-            description: "List of prices",
-            link: "/new",
-            linkTitle: "View Price Lists",
+            title: "Brands",
+            description: "List of Brands",
+            link: "/dashboard/inventory/brands/new",
+            linkTitle: "New Brand",
             enabled: true,
             icon: CircleDollarSign,
         },
+          {
+            title: "Units",
+            description: "Units",
+            link: "/dashboard/inventory/units/new",
+            linkTitle: "New Unit",
+            enabled: true,
+            icon: CircleDollarSign,
+        },
+
     ];
 
     return (

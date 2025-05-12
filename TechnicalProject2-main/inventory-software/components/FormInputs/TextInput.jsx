@@ -21,11 +21,11 @@ export default function TextInput({label,name,register,errors,isRequired = true,
                             className="block w-full rounded-md border-0 py-2 text-gray-900 shadow-sm"
                             placeholder="Enter category title"
                         />
-                        {errors.title && (
-                            <span className="text-sm text-red-600">
-                                Category title is required
-                            </span>
-                        )}
+                        {errors.name && (
+                                    <span className="text-sm text-red-600">
+                                    {label} is required
+                                    </span>
+                                )}
                         </div>
                     </div>
     );
