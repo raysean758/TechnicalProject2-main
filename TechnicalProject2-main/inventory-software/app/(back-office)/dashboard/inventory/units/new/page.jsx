@@ -22,7 +22,7 @@ export default function NewUnit() {
         setLoading(true)
         const baseUrl ="http://localhost:3000"
         try {
-            const response =await fetch(`${baseUrl}/api/categories"`, {
+            const response =await fetch(`${baseUrl}/api/units"`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -42,32 +42,27 @@ export default function NewUnit() {
     return (
         <div>
             {/* Header */}
-            <FormHeader title="New Category" href="/dashboard/inventory/"></FormHeader>
+            <FormHeader title="New Unit" href="/dashboard/inventory/"></FormHeader>
             {/* Form */}
             <form onSubmit={handleSubmit(onSubmit)} className='w-full max-w-3xl p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700 mx-auto my-3'>
                  <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">             
                        <TextInput
-                        Label="Category Title"
+                        Label="Unit Title"
                         name="title"
                         register={register} 
                         errors={errors}
+                        className='w-full'
                 />
-                <div className="sm:col-span-2">
-                    <label
-                    htmlFor="description"
-                    className='block text-sm font-medium leading-6 text-gray-900'
-                    >
-                        Course Description
-                    </label>
-                    <TextareaInput
-                        Label="Category Description"
-                        name="description"
+                 <TextInput
+                        Label="Unit Abbreviation"
+                        name="abbreviation"
                         register={register} 
-                        errors={errors}/>
-                                </div>
-                                </div>
+                        errors={errors}
+                        className='w-full'
+                />
+              </div>
                 <SubmitButton isLoading={loading} 
-                title="Category"/>
+                title="Unit"/>
             </form>
         </div>
     );

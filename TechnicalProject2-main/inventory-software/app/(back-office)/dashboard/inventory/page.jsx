@@ -2,7 +2,7 @@
 
 import FixedHeader from '@/components/dashboard/FixedHeader';
 import OptionCard from '@/components/dashboard/OptionCard';
-import { Boxes, BoxesIcon, CircleDollarSign, LucideCircleDollarSign, Shirt } from 'lucide-react';
+import { Boxes, BoxesIcon, CircleDollarSign, Library, LucideBoxes, LucideCircleDollarSign, Shirt } from 'lucide-react';
 import Link from 'next/link';
 import React from 'react';
 
@@ -14,7 +14,7 @@ export default function Inventory() {
             link: "/dashboard/inventory/items/new",
             linkTitle: "New Item",
             enabled: true,
-            icon: Shirt,
+            icon: Library,
         },
         {
             title: "Brands",
@@ -30,7 +30,7 @@ export default function Inventory() {
             link: "/dashboard/inventory/units/new",
             linkTitle: "New Unit",
             enabled: true,
-            icon: CircleDollarSign,
+            icon: LucideBoxes,
         },
 
     ];
