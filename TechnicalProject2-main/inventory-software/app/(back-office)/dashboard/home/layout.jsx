@@ -1,7 +1,8 @@
 import Home from "./page";
-import HomeNavbar from "@/components/HomeNavbar";
 import React from "react";
 
+function HomeNavbar() {
+}
 export default function Layout({ children }) {
   return (
     <>
