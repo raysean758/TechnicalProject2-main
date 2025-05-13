@@ -29,8 +29,8 @@ export default function Inventory() {
             description: "List of Categories",
             link: "/dashboard/inventory/items/new",
             linkTitle: "New Category",
-            enabled: false,
-            icon: Component,
+            enabled: true,
+            icon: Boxes,
         },
         {
             title: "Units",
@@ -38,7 +38,7 @@ export default function Inventory() {
             link: "/dashboard/inventory/units/new",
             linkTitle: "New Unit",
             enabled: true,
-            icon: LucideBoxes,
+            icon: Component,
         },
 
     ];
