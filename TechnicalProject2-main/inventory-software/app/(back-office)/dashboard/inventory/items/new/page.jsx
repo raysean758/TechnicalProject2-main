@@ -41,6 +41,16 @@ export default function NewItem() {
             value: "sdfjioehufh388838",
         },
     ];
+      const suppliers = [
+        {
+            label: "JE Bergase",
+            value: "main",
+        },
+        {
+            label: "Govt.lc",
+            value: "sdfjioehufh388838",
+        },
+    ];
     const {
         register,
         handleSubmit,
@@ -132,6 +142,13 @@ async function onSubmit(data) {
                         type="number"
                         className="w-full"
                         />
+                        <SelectInput
+                        name="SupplierID"
+                        label="Select Supplier"
+                        register={register}
+                        className="w-full"
+                        options={suppliers}
+                        />
                         <TextInput
                         label= "Re-Order Point"
                         name="reorderPoint"
@@ -170,7 +187,7 @@ async function onSubmit(data) {
                         />
                     </div>
                     <SubmitButton isLoading={loading}
-                    title="Warehouse" />
+                    title="Item" />
                 </form>
         </div>
     );
