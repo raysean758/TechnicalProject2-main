@@ -5,6 +5,7 @@ import SubmitButton from "@/components/FormInputs/SubmitButton";
 import TextInput from "@/components/FormInputs/TextInput";
 import TextareaInput from "@/components/FormInputs/TextareaInput";
 import FormHeader from "@/components/dashboard/FormHeader";
+import { UploadButton } from "@/lib/uploadthing";
 import { Plus, X } from "lucide-react";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -187,6 +188,18 @@ export default function NewItem() {
             register={register}
             errors={errors}
           />
+          <div className="sm:col-span-2"><UploadButton
+        endpoint="imageUploader"
+        onClientUploadComplete={(res) => {
+          // Do something with the response
+          console.log("Files: ", res);
+          alert("Upload Completed");
+        }}
+        onUploadError={(error) => {
+          // Do something with the error.
+          alert(`ERROR! ${error.message}`);
+        }}
+      /></div>
         </div>
         <SubmitButton isLoading={loading} title="Item" />
       </form>
