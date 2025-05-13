@@ -20,7 +20,7 @@ import SidebarDropdownLink from './SidebarDropdownLink';
       { title: "Items", href: "/dashboard/inventory" },
       { title: "Categories", href: "/dashboard/inventory/categories/new/" },
       { title: "Brands", href: "/dashboard/inventory" },
-      { title: "Units", href: "/dashboard/inventor" },
+      { title: "Units", href: "/dashboard/inventory" },
       { title: "Inventory Adjustments", href: "/dashboard/inventory" },
     ];
     const salesLinks = [

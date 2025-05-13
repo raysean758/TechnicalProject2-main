@@ -18,6 +18,7 @@ export default function NewCategory() {
     } = useForm();
     const [loading, setLoading] = useState(false)
     async function onSubmit(data) {
+        
         console.log(data)
         setLoading(true)
         const baseUrl ="http://localhost:3000"
