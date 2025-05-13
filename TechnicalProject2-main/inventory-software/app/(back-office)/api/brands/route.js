@@ -12,10 +12,10 @@ export async function POST(request) {
     return NextResponse.json(
       {
         error,
-        message: "Failed to Create a brand"
+        message: "Failed to Create a brand",
       },
       {
-        status: 500
+        status: 500,
       }
     );
   }

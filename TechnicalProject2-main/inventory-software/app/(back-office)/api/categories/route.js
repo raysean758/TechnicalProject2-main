@@ -12,10 +12,10 @@ export async function POST(request) {
     return NextResponse.json(
       {
         error,
-        message: "Failed to Create a category"
+        message: "Failed to Create a category",
       },
       {
-        status: 500
+        status: 500,
       }
     );
   }
