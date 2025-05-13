@@ -1,3 +1,3 @@
-import { generateComponents } from "@uploadthing/react";
+import { generateUploadthingComponents } from "@uploadthing/react";
 
-export const { UploadButton, UploadDropzone, Uploader } = generateComponents();
+export const { UploadButton, UploadDropzone, Uploader } = generateUploadthingComponents();
