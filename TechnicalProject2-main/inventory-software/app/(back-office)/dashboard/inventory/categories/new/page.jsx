@@ -63,7 +63,7 @@ export default function NewCategory() {
               htmlFor="description"
               className="block text-sm font-medium leading-6 text-gray-900"
             >
-              Course Description
+              Category Description
             </label>
             <TextareaInput
               Label="Category Description"
